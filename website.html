@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind website</title>
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/website.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.js"></script>
+</head>
+
+<body class="scroll-smooth">
+    <section class="header bg-[#1A1F2C] w-full py-6 fixed top-0  left-0 right-0 z-10 ">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center px-4">
+
+            <div class="header-logo flex items-center">
+                <h1 class="text-2xl font-bold text-white max-[1024px]:text-[16px]">
+                    Crypto<span class="text-purple-500 inline">Flow</span>
+                </h1>
+            </div>
+
+            <ul class="hidden lg:flex space-x-6">
+                <li><a href="#Features" class="text-gray-300 font-semibold hover:text-white">Features</a></li>
+                <li><a href="#HowItWorks" class="text-gray-300 font-semibold hover:text-white">How it Works</a></li>
+                <li><a href="#Testimonials" class="text-gray-300 font-semibold hover:text-white">Testimonials</a></li>
+                <li><a href="#Pricing" class="text-gray-300 font-semibold hover:text-white">Pricing</a></li>
+                <li><a href="#faq" class="text-gray-300 font-semibold hover:text-white">FAQ</a></li>
+            </ul>
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <button class="text-gray-300 hover:text-white">Login</button>
+                <button class="bg-violet-500 text-white rounded-md p-2 px-4 hover:bg-purple-600">Buy Now</button>
+            </div>
+
+            <!-- Mobile Toggle Button -->
+            <button id="menu-btn" class="lg:hidden text-white focus:outline-none">
+                <!-- Hamburger Icon -->
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Close Icon (hidden by default) -->
+                <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class=" lg:hidden hidden bg-[#1A1F2C]/95 backdrop-blur-lg w-full py-4 shadow-lg transition-all duration-300">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="#Features" class="text-gray-300 hover:text-white block py-2">Features</a></li>
+                <li><a href="#HowItWorks" class="text-gray-300 hover:text-white block py-2">How it Works</a></li>
+                <li><a href="#Testimonials" class="text-gray-300 hover:text-white block py-2">Testimonials</a></li>
+                <li><a href="#Pricing" class="text-gray-300 hover:text-white block py-2">Pricing</a></li>
+                <li><a href="#faq" class="text-gray-300 hover:text-white block py-2">FAQ</a></li>
+                <li class="pt-4 flex flex-col space-y-3 w-[80%]">
+                    <button class="text-gray-300 hover:text-white border border-gray-500 rounded-xl py-2">Login</button>
+                    <button class="bg-violet-500 text-white rounded-xl py-2 hover:bg-purple-600">Buy Now</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Toggle Script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+
+    <section class="hero-section  w-full bg-[#1A1F2C] bg-gradient-to-tl from-[#1A1F2C] to-[#252937ea] py-20">
+        <div class="container mx-auto flex flex-wrap px-4 justify-between ">
+            <div class="lg:w-1/2 flex flex-wrap lg:align-middle md:py-10" data-aos="zoom-in" data-aos-delay="500">
+                <div class="bg-sky-900 inline-block rounded-2xl px-4 text-center py-0.5 mb-5">
+                    <span class="text-purple-500 lg:text-sm max-[320px]: text-[13px]">New Features</span>
+                    <span class="lg:text-sm text-gray-300 max-[320px]: text-[13px]">AI-Powered Trading Signals ></span>
+                </div>
+                <h1 class=" lg:text-6xl font-bold mb-5 text-zinc-100 md:text-5xl sm:text-[38px] max-[426px]:text-[21px] max-[320px]:text-[14px] max-[765px]: text-3xl">
+                    <span class="text-purple-500 ">Trade Crypto</span>
+                    with Confidence & Clarity
+                </h1>
+                <p class="lg:text-lg font-semibold mb-5 text-gray-400 max-[320px]: text-[14px]">Experience seamless cryptocurrency trading with
+                    real-time
+                    analytics, AI-powered insights, and zero commission fees.</p>
+                <div class="hero-btns flex flex-wrap gap-9 mb-5 sm:justify-center">
+                    <button class="inline bg-purple-500 py-3 px-16 rounded-2xl text-white sm:w-full">Start
+                        Trading <i class="fa-solid fa-arrow-right ml-6 inline"></i></button>
+                    <button class="inline bg-black py-3 px-14 rounded-2xl text-white sm:w-full">View Demo <i
+                            class="fa-solid fa-arrow-up-right-from-square ml-2 inline-block"></i></button>
+                </div>
+                <div class="flex flex-wrap lg:gap-6 sm:w-full max-[375px]: gap-[15px] max-[320px]: gap-x-3 ">
+                    <div>
+                        <p class="xl:text-2xl font-bold text-white max-[320px]: text-[14px]">$2.5B+</p>
+                        <p class="xl:text-sm text-gray-400 max-[320px]: text-[12px]">Trading Volume</p>
+                    </div>
+                    <div class="h-12 w-px bg-gray-700"></div>
+                    <div>
+                        <p class="xl:text-2xl font-bold text-white max-[320px]: text-[14px]">120K+</p>
+                        <p class="xl:text-sm text-gray-400  max-[320px]: text-[12px] ">Active Traders</p>
+                    </div>
+                    <div class="h-12 w-px bg-gray-700"></div>
+                    <div>
+                        <p class="xl:text-2xl font-bold text-white max-[320px]: text-[14px]">50+</p>
+                        <p class="xl:text-sm text-gray-400 max-[320px]: text-[12px]">Global Markets</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 flex flex-wrap md:w-[82%] md:mx-auto lg:items-center sm:w-full"
+                data-aos="zoom-in" data-aos-delay="500">
+                <div class="hero-img w-3/4 mx-auto relative z-0 justify-center lg:w-[96%]">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&h=800"
+                        alt="" width="w-full" class="rounded-xl shadow-2xl border border-white/10 ">
+                    <div
+                        class=" absolute -top-6 -left-5 flex inline-flex bg-[#9b87f527] xl:gap-5 items-center lg:p-2 lg:px-5 rounded-xl lg:py-4 backdrop-blur-md sm:p-[7px] max-[426px]:gap-[4px] max-[426px]:p-2 max-[639px]: p-3 ">
+                        <i
+                            class="fa-solid fa-shield-halved  xl:p-3 rounded-full bg-[#9b87f533] text-xl  text-[#503baf]  sm:text-[15px] max-[426px]:p-1 "></i><span
+                            class="flex flex-col text-gray-300 xl:text-lg sm:text-[13px] ">Security Level <span
+                                class="font-bold text-md text-white">Enterprice</span></span>
+                    </div>
+                    <div
+                        class="absolute -right-8 z-10 flex inline-flex bg-[#9b87f533] xl:gap-5 items-center lg:p-2 lg:px-4 rounded-xl lg:py-4  xl:bottom-1 lg:bottom-[-34px] lg:-right-3 md:bottom-[-27px] sm:p-[7px] sm:bottom-[-30px] max-[426px]:gap-[4px] max-[426px]:-bottom-3 max-[426px]:p-2">
+                        <i class="fa-solid fa-arrow-trend-up text-green-600 bg-[#47b86f36] lg:p-4 rounded-full sm:p-[8px] max-[426px]:p-1"></i> <span
+                            class="flex flex-wrap flex-col text-gray-400 sm:text-[13px] max-[426px]:text-[13px]">24h Change <span
+                                class="font-bold xl:text-xl text-[#36AF61] ">+12.34%</span></span>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Features" class="Feature-section py-24  bg-[#14161d] ">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-4">
+                <h1 class="text-4xl font-bold text-[#9f8fe6] mb-4">Powerful Features</h1>
+                <p class="text-[16px] text-gray-400">CryptoFlow gives you the edge with advanced tools designed for both
+                    beginners and
+                <p class="text-[16px] text-gray-400 mb-16">professional traders.</p>
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:m-4 " data-aos="zoom-out" data-aos-delay="200">
+                <div
+                    class=" bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:shadow-xl hover:shadow-[#9b87f50d]">
+                    <div class="text-[#9f8fe6] bg-[#9f8fe627] inline px-4 py-3 text-2xl rounded-xl"><i
+                            class="fa-solid fa-magnifying-glass-chart mb-7"></i></div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Real-time Analytics</h3>
+                    <p class="text-gray-400">Monitor market movements with advanced charts and indicators updated in
+                        real-time.</p>
+                </div>
+                <div
+                    class=" bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:shadow-xl hover:shadow-[#9b87f50d]">
+                    <div class="text-[#9f8fe6] bg-[#9f8fe627] inline px-4 py-3 text-2xl rounded-xl"> <i
+                            class="fa-solid fa-lock mb-7"></i></div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Bank-level Security</h3>
+                    <p class="text-gray-400">Your assets are protected with military-grade encryption and multi-factor
+                        authentication.</p>
+                </div>
+                <div
+                    class=" bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:shadow-xl hover:shadow-[#9b87f50d]">
+                    <div class="text-[#9f8fe6] bg-[#9f8fe627] inline px-4 py-3 text-2xl rounded-xl"><i
+                            class="fa-solid fa-cloud-bolt mb-7"></i></div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Instant Execution</h3>
+                    <p class="text-gray-400">Execute trades in milliseconds with our high-performance trading engine.
+                    </p>
+                </div>
+                <div
+                    class=" bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:shadow-xl hover:shadow-[#9b87f50d]">
+                    <div class="text-[#9f8fe6] bg-[#9f8fe627] inline px-4 py-3 text-2xl rounded-xl"><i
+                            class="fa-solid fa-compass mb-7"></i></div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Smart Portfolio</h3>
+                    <p class="text-gray-400">Optimize your crypto holdings with AI-powered portfolio suggestions.</p>
+                </div>
+                <div
+                    class=" bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:shadow-xl hover:shadow-[#9b87f50d]">
+                    <div class="text-[#9f8fe6] bg-[#9f8fe627] inline px-4 py-3 text-2xl rounded-xl"><i
+                            class="fa-solid fa-chart-line mb-7"></i></div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Price Alerts</h3>
+                    <p class="text-gray-400">Never miss an opportunity with customizable price alerts and notifications.
+                    </p>
+                </div>
+                <div
+                    class=" bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:shadow-xl hover:shadow-[#9b87f50d]">
+                    <div class="text-[#9f8fe6] bg-[#9f8fe627] inline px-4 py-3 text-xl rounded-xl"><i
+                            class="fa-solid fa-warehouse mb-7"></i></div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Cold Storage</h3>
+                    <p class="text-gray-400">Majority of assets stored in offline cold wallets for maximum security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="HowItWorks" class="How it Works bg-[#14161d] lg:py-24 md:py-18">
+        <div class="container mx-auto px-4 ">
+            <div class="text-center mb-4">
+                <h1 class="text-4xl font-bold text-[#9f8fe6] mb-4">How It Works</h1>
+                <p class="text-[16px] text-gray-400">Getting started with CryptoFlow is easy. Follow these simple steps
+                    to begin your
+                <p class="text-[16px] text-gray-400 mb-16"> crypto journey.</p>
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:m-[15px] " data-aos="zoom-in" data-aos-delay="400">
+                <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
+                    <span
+                        class="absolute -top-5 -left-4 text-gray-400 border border-indigo-400 rounded-md px-3 py-1 font-bold text-xl bg-[#12141c91]">01</span>
+                    <div class="text-[#9f8fe6] bg-[#9f8fe627] inline px-4 py-3 text-xl rounded-xl"><i
+                            class="fa-solid fa-arrow-down mb-6"></i></div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Create Your Account</h3>
+                    <p class="text-gray-400">Sign up in minutes with our streamlined onboarding process. No complicated
+                        forms or lengthy verification.</p>
+                </div>
+                <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
+                    <span
+                        class="absolute -top-5 -left-4 text-gray-400 border border-indigo-400 rounded-md px-3 py-1 font-bold text-xl bg-[#12141c91]">02</span>
+                    <div class="text-[#9f8fe6] bg-[#9f8fe627] inline px-4 py-3 text-xl rounded-xl"><i
+                            class="fa-solid fa-wallet mb-6"></i></div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Fund Your Wallet</h3>
+                    <p class="text-gray-400">Easily deposit crypto or fiat through multiple payment options with zero
+                        deposit fees.</p>
+                </div>
+                <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
+                    <span
+                        class="absolute -top-5 -left-4 text-gray-400 border border-indigo-400 rounded-md px-3 py-1 font-bold text-xl bg-[#12141c91]">01</span>
+                    <div class="text-[#9f8fe6] bg-[#9f8fe627] inline px-4 py-3 text-xl rounded-xl"><i
+                            class="fa-solid fa-chart-simple mb-6"></i></div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Start Trading</h3>
+                    <p class="text-gray-400">Access 50+ cryptocurrencies and start trading immediately with intuitive
+                        tools and real-time data.</p>
+                </div>
+            </div>
+            <a href="" class="flex flex-wrap justify-center"><button
+                    class="bg-violet-500 text-white rounded-md py-2 px-6 hover:bg-purple-600 mt-16 ">Create Free Account
+                </button></a>
+        </div>
+    </section>
+    <section id="Testimonials" class="Testimonials py-24 bg-[#14161d] ">
+        <div class="container mx-auto px-4 ">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold text-[#9f8fe6] mb-4">What Our Users Say</h1>
+                <p class="text-[16px] text-gray-400">Join thousands of satisfied traders who have transformed their
+                    trading experience with
+                <p class="text-[16px] text-gray-400 mb-16">CryptoFlow.</p>
+                </p>
+            </div>
+            <div id="default-carousel"
+                class="lg:relative w-5/6 mx-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl mb-16 mb-"
+                data-carousel="slide" data-aos="zoom-in" data-aos-delay="400">
+                <!-- Carousel wrapper -->
+                <div class="relative xl:h-52  overflow-hidden rounded-lg md:h-56 sm:h-[300px] max-[426px]:h-[374px] max-[640px]:h-[260px]">
+                    <!-- Item 1 -->
+                    <div class="hidden  duration-700 ease-in-out p-8" data-carousel-item>
+                        <div class="text-xl text-yellow-300 mb-5 flex flex-wrap"><i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                        <p class="xl:text-xl  text-gray-400 max-[320px]: text-[15px]">"CryptoFlow has completely transformed my crypto trading
+                            experience. The real-time analytics and AI recommendations have significantly improved my
+                            returns."</p>
+                        <ul role="list" class="max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
+                            <li class="py-3 sm:py-4">
+                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                    <div class="shrink-0">
+                                        <img class="w-12 h-12 border-2 border-purple-400 ring-offset-2 shadow-md  rounded-full"
+                                            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&h=100&fit=crop"
+                                            alt="Neil image">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="xl:text-xl font-semibold text-white truncate dark:text-white max-[320px]: text-[13px]">
+                                            Emma Thompsom
+                                        </p>
+                                        <p class="text-sm text-gray-400 truncate dark:text-gray-400">
+                                            Investment Advisor
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out p-8" data-carousel-item>
+                        <div class="text-xl text-yellow-300 mb-5 flex flex-wrap"><i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                        <p class="xl:text-xl  text-gray-400 max-[320px]: text-[15px]">"CryptoFlow has completely transformed my crypto trading
+                            experience. The real-time analytics and AI recommendations have significantly improved my
+                            returns."</p>
+                        <ul role="list" class="max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
+                            <li class="py-3 sm:py-4">
+                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                    <div class="shrink-0">
+                                        <img class="w-12 h-12 border-2 border-purple-400 ring-offset-2 shadow-md  rounded-full"
+                                            src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=100&h=100&fit=crop"
+                                            alt="Neil image">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="xl:text-xl font-semibold text-white truncate dark:text-white max-[320px]: text-[13px]">
+                                            David Rodriguez
+                                        </p>
+                                        <p class="text-sm text-gray-400 truncate dark:text-gray-400">
+                                            Cybersecurity Specialist
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out p-8" data-carousel-item>
+                        <div class="text-xl text-yellow-300 mb-5 flex flex-wrap"><i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                        <p class="xl:text-xl  text-gray-400 max-[320px]: text-[15px]">"CryptoFlow has completely transformed my crypto trading
+                            experience. The real-time analytics and AI recommendations have significantly improved my
+                            returns."</p>
+                        <ul role="list" class="max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
+                            <li class="py-3 sm:py-4">
+                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                    <div class="shrink-0">
+                                        <img class="w-12 h-12 border-2 border-purple-400 ring-offset-2 shadow-md  rounded-full"
+                                            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=100&h=100&fit=crop"
+                                            alt="Neil image">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="xl:text-xl font-semibold text-white truncate dark:text-white max-[320px]: text-[13px]">
+                                            Michael Chen
+                                        </p>
+                                        <p class="text-sm text-gray-400 truncate dark:text-gray-400">
+                                            Full-time Trader
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out p-8" data-carousel-item>
+                        <div class="text-xl text-yellow-300 mb-5 flex flex-wrap"><i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                        <p class="xl:text-xl  text-gray-400 max-[320px]: text-[15px]">"CryptoFlow has completely transformed my crypto trading
+                            experience. The real-time analytics and AI recommendations have significantly improved my
+                            returns."</p>
+                        <ul role="list" class="max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
+                            <li class="py-3 sm:py-4">
+                                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                                    <div class="shrink-0">
+                                        <img class="w-12 h-12 border-2 border-purple-400 ring-offset-2 shadow-md  rounded-full"
+                                            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&h=100&fit=crop"
+                                            alt="Neil image">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="xl:text-xl font-semibold text-white truncate dark:text-white max-[320px]: text-[13px]">
+                                            Sarah Johnson
+                                        </p>
+                                        <p class="text-sm text-gray-400 truncate dark:text-gray-400">
+                                            Tech Entrepreneur
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                        data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                        data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                        data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                        data-carousel-slide-to="3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Pricing" class="Pricing py-24  bg-[#14161d] ">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="zoom-out" data-aos-delay="500">
+                <h1 class="lg:text-5xl font-bold text-[#9f8fe6] mb-4 sm:text-[40px] max-[426px]:text-3xl">Simple, Transparent Pricing</h1>
+                <p class="text-[16px] text-gray-400 mb-8">Choose the plan that best fits your trading needs. All plans
+                    include our core platform features.
+                </p>
+                <div class="inline-flex p-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full"><button
+                        class="px-4 py-2 rounded-full bg-[#9b87f5] text-white">Monthly</button><button
+                        class="px-4 py-2 rounded-full transition-colors text-gray-400">Annual <span
+                            class="text-xs font-medium">Save 20%</span></button></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:m-[15px]" data-aos="zoom-out" data-aos-delay="300">
+                <div class="bg-white/5 backdrop-blur-sm border rounded-xl border-white/10">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Basic</h3>
+                        <div class="mb-4"><span class="text-3xl md:text-4xl font-bold text-white">$0</span><span
+                                class="text-gray-400 ml-1"></span></div>
+                        <p class="text-gray-400 mb-6">Perfect for beginners getting started with crypto trading.</p>
+                        <button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 rounded-xl w-full mb-6 bg-white/10 hover:bg-white/20 text-white">Get
+                            Started</button>
+                        <p class="text-gray-300 mb-3">What's Include :</p>
+                        <ul class="space-y-3">
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Access to 20+ cryptocurrencies</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Basic charting tools</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Market data with 15-min delay</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Email support</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Mobile app access</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/5 backdrop-blur-sm border rounded-xl border-[#9b87f5] overflow-hidden shadow-2xl  shadow-[#9b87f568] show">
+                    <div class="bg-[#9b87f5] text-white text-center py-1 text-sm font-medium ">Most Popular</div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Pro</h3>
+                        <div class="mb-4"><span class="text-3xl md:text-4xl font-bold text-white">$19</span><span
+                                class="text-gray-400 ml-1">/month</span></div>
+                        <p class="text-gray-400 mb-6">Designed for active traders seeking advanced tools.</p>
+                        <button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 rounded-xl w-full mb-6 bg-[#9b87f5] hover:bg-[#7260c6] text-white">Start
+                            7-day Free Trial</button>
+                        <p class="text-gray-300 mb-3">What's Include :</p>
+                        <ul class="space-y-3">
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Access to 20+ cryptocurrencies</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Advanced charting tools</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Real-time market data</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Priority email support</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Reduced trading fees (0.1%)</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">API access</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Portfolio analytics</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border rounded-xl border-white/10">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-2 text-white">Enterprise</h3>
+                        <div class="mb-4"><span class="text-3xl md:text-4xl font-bold text-white">$49</span><span
+                                class="text-gray-400 ml-1">/month</span></div>
+                        <p class="text-gray-400 mb-6">Perfect for beginners getting started with crypto trading.</p>
+                        <button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 rounded-xl w-full mb-6 bg-white/10 hover:bg-white/20 text-white">Contact
+                            Sales</button>
+                        <p class="text-gray-300 mb-3">What's Include :</p>
+                        <ul class="space-y-3">
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Access to 20+ cryptocurrencies</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Basic charting tools</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Market data with 15-min delay</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Email support</span>
+                            </li>
+                            <li class="flex item-start gap-5">
+                                <div class="text-purple-400"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-gray-400 text-sm">Mobile app access</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section id="faq" class="faq lg:py-24 md:py-20 min-[425px]:pt-[29px] min-[425px]:pb-[90px] bg-[#14161d] ">
+        <div class="container px-4 mx-auto">
+            <div class="text-center mb-16" data-aos="zoom-in" data-aos-delay="500">
+                <h1 class="lg:text-5xl font-bold text-[#9f8fe6] mb-4  sm:text-[35px] max-[426px]:text-4xl">Frequently Asked Questions</h1>
+                <p class="xl:text-[16px] text-gray-400 max-[320px]: text-[14px]">Got questions about CryptoFlow? We've got answers. If you don't see
+                    what you're looking 
+                <p class=" xl:text-[16px] text-gray-400 mb-16 max-[320px]: text-[14px]"> for, reach out to our support team.</p>
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4 min-[425px]:pb-16">
+
+                <!-- FAQ Item 1 -->
+                <button type="button"
+                    class="flex justify-between items-center w-full p-4 font-medium text-left text-white bg-gray-800 rounded-lg hover:bg-gray-700"
+                    data-collapse-toggle="faq1" aria-expanded="false" aria-controls="faq1">
+                    How secure is CryptoFlow?
+                    <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq1" class="hidden p-4 text-sm text-gray-300 bg-gray-900 rounded-b-lg">
+                    CryptoFlow uses industry-standard encryption, two-factor authentication, and cold storage to ensure
+                    the safety of your assets.
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <button type="button"
+                    class="flex justify-between items-center w-full p-4 font-medium text-left text-white bg-gray-800 rounded-lg hover:bg-gray-700"
+                    data-collapse-toggle="faq2" aria-expanded="false" aria-controls="faq2">
+                    What cryptocurrencies can I trade on CryptoFlow?
+                    <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq2" class="hidden p-4 text-sm text-gray-300 bg-gray-900 rounded-b-lg">
+                    We support trading of Bitcoin, Ethereum, Litecoin, Ripple, and many other popular cryptocurrencies.
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <button type="button"
+                    class="flex justify-between items-center w-full p-4 font-medium text-left text-white bg-gray-800 rounded-lg hover:bg-gray-700"
+                    data-collapse-toggle="faq3" aria-expanded="false" aria-controls="faq3">
+                    What are the fees for using CryptoFlow?
+                    <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq3" class="hidden p-4 text-sm text-gray-300 bg-gray-900 rounded-b-lg">
+                    CryptoFlow charges a flat 0.25% trading fee per transaction, with no hidden costs.
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <button type="button"
+                    class="flex justify-between items-center w-full p-4 font-medium text-left text-white bg-gray-800 rounded-lg hover:bg-gray-700"
+                    data-collapse-toggle="faq4" aria-expanded="false" aria-controls="faq4">
+                    How do I get started with CryptoFlow?
+                    <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq4" class="hidden p-4 text-sm text-gray-300 bg-gray-900 rounded-b-lg">
+                    Simply create an account, complete identity verification, deposit funds, and start trading
+                    instantly.
+                </div>
+                <button type="button"
+                    class="flex justify-between items-center w-full p-4 font-medium text-left text-white bg-gray-800 rounded-lg hover:bg-gray-700"
+                    data-collapse-toggle="faq3" aria-expanded="false" aria-controls="faq3">
+                    What are the fees for using CryptoFlow?
+                    <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq3" class="hidden p-4 text-sm text-gray-300 bg-gray-900 rounded-b-lg">
+                    CryptoFlow charges a flat 0.25% trading fee per transaction, with no hidden costs.
+                </div>
+                <button type="button"
+                    class="flex justify-between items-center w-full p-4 font-medium text-left text-white bg-gray-800 rounded-lg hover:bg-gray-700"
+                    data-collapse-toggle="faq3" aria-expanded="false" aria-controls="faq3">
+                    What are the fees for using CryptoFlow?
+                    <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="faq3" class="hidden p-4 text-sm text-gray-300 bg-gray-900 rounded-b-lg">
+                    CryptoFlow charges a flat 0.25% trading fee per transaction, with no hidden costs.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-[#14161d] md:py-20 ">
+        <div class="container mx-auto px-4" data-aos="zoom-in" data-aos-delay="500">
+            <div
+                class="bg-gradient-to-b max-w-4xl mx-auto bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-fade-in text-white">Ready to revolutionize your
+                    <span class="  text-[#9a8dd2]">crypto trading ?</span>
+                </h2>
+                <p class="text-gray-300 xl:text-lg mb-8 max-w-2xl mx-auto animate-fade-in max-[320px]: text-[17px]" style="animation-delay: 0.2s;">
+                    Join thousands of traders who have already upgraded their crypto experience with CryptoFlow. Start
+                    today with zero risk.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4"><button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background  h-11 rounded-xl bg-[#9a8dd2] hover:bg-[#7867c7] text-white px-8 py-6">Get
+                        Started for Free</button><button
+                        class="inline-flex items-center justify-center gap-2 bg-black border text-sm font-medium  h-11 rounded-xl px-8 border-white/20 text-white hover:bg-white/5 py-6">Schedule
+                        Demo</button></div>
+                <p class="mt-6 text-sm text-gray-400 animate-fade-in" style="animation-delay: 0.6s;">No credit card
+                    required. Cancel anytime.</p>
+            </div>
+        </div>
+    </section>
+    <section id="Footer" class="Footer">
+        <footer class="bg-gray-900 text-white">
+            <div class="mx-auto w-full max-w-screen-xl lg:p-24 py-8 lg:py-12 md:p-20" data-aos="zoom-out"
+                data-aos-delay="500">
+                <div class="md:flex md:justify-between">
+                    <div class="mb-6 md:mb-0 sm:pl-4 max-[426px]:pl-3">
+                        <a href="#" class="flex items-center text-2xl font-semibold text-white">
+                            Crypto<span class="text-purple-500">Flow</span>
+                        </a>
+                        <p class="mt-4 max-w-sm text-gray-400">
+                            The most trusted cryptocurrency platform, empowering traders with innovative tools and
+                            unparalleled security.
+                        </p>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 min-[425px]:grid-cols-1 sm:pl-4 max-[426px]:pl-3- max-[375px]: pl-4">
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold uppercase text-white">Products</h2>
+                            <ul class="text-gray-400 space-y-2">
+                                <li><a href="#" class="hover:underline">Exchange</a></li>
+                                <li><a href="#" class="hover:underline">Wallet</a></li>
+                                <li><a href="#" class="hover:underline">API</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
+                            <ul class="text-gray-400 space-y-2">
+                                <li><a href="#" class="hover:underline">Blog</a></li>
+                                <li><a href="#" class="hover:underline">Docs</a></li>
+                                <li><a href="#" class="hover:underline">Tutorials</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold uppercase text-white">Company</h2>
+                            <ul class="text-gray-400 space-y-2">
+                                <li><a href="#" class="hover:underline">About</a></li>
+                                <li><a href="#" class="hover:underline">Careers</a></li>
+                                <li><a href="#" class="hover:underline">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between items-center sm:px-4">
+                    <span class="text-sm text-gray-400 sm:text-center">© 2025 CryptoFlow. All Rights Reserved.</span>
+                    <div class="flex mt-4 sm:mt-0 space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
