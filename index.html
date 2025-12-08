@@ -6,10 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind website</title>
     <link href="output.css" rel="stylesheet">
-    <link rel="stylesheet" href="/src/website.css">
+    <!-- <link rel="stylesheet" href="/src/website.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.css" rel="stylesheet" />
     <script src="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.js"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.hero-section .hero-img {
+    margin-top: 35px;
+    animation-name: img;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes img {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+    </style>
 </head>
 
 <body class="scroll-smooth">
